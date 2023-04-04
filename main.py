@@ -1,16 +1,18 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+from board import Board
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+def main():
+    user_rows = int(input('How many rows? '))
+    user_columns = int(input('How many columns? '))
+    game_of_life_board = Board(user_rows, user_columns)
+    game_of_life_board.draw_board()
+    user_action = ''
+    while user_action != 'q':
+        user_action = input('Press enter to add generation or press q to quit:')
+
+        if user_action == '':
+            game_of_life_board.update_board()
+            game_of_life_board.draw_board()
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+main()
