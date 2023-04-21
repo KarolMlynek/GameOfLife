@@ -1,7 +1,5 @@
 from cell import Cell
 from random import randint
-import os
-
 
 class Board:
     def __init__(self, rows, columns):
@@ -12,8 +10,7 @@ class Board:
         self.generate_board()
 
     def draw_board(self):
-        #rint('\n'*10)
-        os.system('cls')
+        '''print('\n'*10)'''
         print('Printing board')
         for row in self.grid:
             for column in row:
